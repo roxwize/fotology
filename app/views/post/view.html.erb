@@ -1,0 +1,13 @@
+<% if @foto.present? %>
+  <img
+    src=<%= @foto.url %>
+    alt=<%= @foto.desc %>
+    style="width:500px"
+    class="mb-4"
+  >
+  <h1><%= @foto.desc %></h1>
+  <h3>#<%= @foto.id %></h3>
+<% else %>
+  <h1>404</h1>
+  <h3>foto not found</h3>
+<% end %>

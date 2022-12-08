@@ -1,0 +1,9 @@
+<h1>Search for a post</h1>
+<h3><%= link_to "Go back", root_path %></h3>
+
+<% if @foto %>
+  <% Foto.all.each do |f| %>
+    <strong class="mb-3"><%= link_to "#{f.desc} (\##{f.id})", post_path(id: f.id) %></strong>
+    <br/>
+  <% end %>
+<% end %>
