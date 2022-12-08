@@ -1,0 +1,16 @@
+%h1 Make new foto
+%h3.mb-3 = #{link_to "Go back", root_path}
+
+#create_form
+  = form_with model: @foto, url: post_create_path, data:{turbo:false} do |f|
+    - if @foto.errors.any?
+      .alert.alert-warning
+        - @foto.errors.full_messages.each do |m|
+          = m
+    = f.label :url, "URL", class: "form-label"
+    = f.url_field :url, class: "form-control mb-3"
+    = f.label :
+  <%= f.label :desc, "Description", class: "form-label" %>
+  <%= f.text_field :desc, class: "form-control mb-3" %>
+  <%= f.submit class: "btn btn-primary", local: true %>
+<% end %>

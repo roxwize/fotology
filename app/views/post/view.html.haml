@@ -1,0 +1,7 @@
+- if @foto.present?
+  %img.mb-4{ src: @foto.url, alt: @foto.desc, style: "width:500px" }
+  %h1 #{@foto.desc}
+  %h3 ##{@foto.id}
+- else
+  %h1 404
+  %h3 foto not found
