@@ -1,16 +1,16 @@
 # == Schema Information
 #
-# Table name: fotos
+# Table name: comments
 #
 #  id         :integer          not null, primary key
-#  url        :string           not null
-#  desc       :string
+#  content    :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  foto_id    :integer
 #
 require "test_helper"
 
-class FotoTest < ActiveSupport::TestCase
+class CommentTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

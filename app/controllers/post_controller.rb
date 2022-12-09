@@ -12,6 +12,16 @@ class PostController < ApplicationController
   end
   def view
     @foto = Foto.find_by(id: params[:id])
+    @comment = Comment.new
+  end
+  def addcomment
+    @foto = Foto.find_by(id: params[:id])
+    @comment = @foto.comments.build(comment_params)
+    if @comment.save
+      redirect_to post_path(id: params[:id]), notice: "Your comment has been added"
+    else
+      render :view
+    end
   end
   def find
     @foto = Foto.all
@@ -30,5 +40,8 @@ class PostController < ApplicationController
   end
   def search_params
     params.require(:foto).permit(:q)
+  end
+  def comment_params
+    params.require(:comment).permit(:content)
   end
 end

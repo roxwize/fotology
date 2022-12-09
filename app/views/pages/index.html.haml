@@ -1,0 +1,12 @@
+%h1 web page
+= link_to "create a post", post_create_path
+%br/
+= link_to "find a post", post_search_path
+%hr/
+- if @foto.present?
+  %h2 latest foto (#{link_to "view", post_path(id: @foto.id)})
+  %img.mb-4{src: @foto.url, alt: @foto.desc, style: "width:250px"}
+  %h4 #{@foto.desc}
+- else
+  %h1 there are no photos
+  %h3 you should #{link_to "make one", post_create_path}

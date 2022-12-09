@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   post "/post/create", to: "post#create"
 
   get "/post", to: "post#view"
+  post "/post", to: "post#addcomment"
   get  "/post/search", to: "post#find"
 end

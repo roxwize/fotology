@@ -1,0 +1,8 @@
+%h1 Search for a post
+%h3 #{link_to "Go back", root_path}
+
+- if @foto
+  - Foto.all.each do |f|
+    %strong.mb-3
+      = link_to "#{f.desc} (\##{f.id})", post_path(id: f.id)
+    %br/
